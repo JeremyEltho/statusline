@@ -15,7 +15,7 @@ Tell Claude Code:
 
 > Follow the instructions in https://github.com/JeremyEltho/statusline/blob/main/INSTALL.md
 
-Claude walks you through a setup: pick what to show (model, context %, rate limits, git branch, cost, time, ...), the layout, separators, bar style, and colors. Or just **mock up the line you want** and Claude builds it to match. It saves your choices to `~/.claude/statusline.spec.md`, so you can say "customize my status line" later to tweak it.
+Claude walks you through a setup with 60+ options: model, effort, context, rate limits and reset timers, cost and burn rate, prompt cache, git (dirty counts, ahead/behind, PR status), env info (venv, kube, battery), clock, and more, plus presets (Minimal, Powerline, Tokyo Night, ...), layout, separators, bar styles, threshold colors, gradients, clickable links, and narrow-terminal behavior. Or just **mock up the line you want** and Claude builds it to match. It saves your choices to `~/.claude/statusline.spec.md`, so you can say "customize my status line" later to tweak it.
 
 ## Install (default look, manual)
 
