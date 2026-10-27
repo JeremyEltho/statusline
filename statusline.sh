@@ -2,7 +2,7 @@
 input=$(cat)
 
 user=$(whoami)
-model=$(echo "$input" | jq -r '.model.display_name')
+model=$(echo "$input" | jq -r '.model.display_name // "unknown"')
 ctx=$(echo "$input" | jq -r '.context_window.used_percentage // empty')
 h5=$(echo "$input"  | jq -r '.rate_limits.five_hour.used_percentage // empty')
 d7=$(echo "$input"  | jq -r '.rate_limits.seven_day.used_percentage // empty')
@@ -18,5 +18,7 @@ bar() {
   printf ']'
 }
 
-printf '%s | %s | ctx:%s%% | 5h:%s 7d:%s\n' \
-  "$user" "$model" "${ctx%.*}" "$(bar "$h5")" "$(bar "$d7")"
+[ -n "$ctx" ] && ctx="${ctx%.*}%" || ctx="--"
+
+printf '%s | %s | ctx:%s | 5h:%s 7d:%s\n' \
+  "$user" "$model" "$ctx" "$(bar "$h5")" "$(bar "$d7")"
