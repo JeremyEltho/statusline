@@ -3,7 +3,7 @@
 A custom [Claude Code](https://claude.com/claude-code) status line:
 
 ```
-jeremy | Sonnet 5.5 | ctx:6% | 5h:[███░░░░░░░] 7d:[██░░░░░░░░]
+user | Sonnet 5.5 | ctx:6% | 5h:[███░░░░░░░] 7d:[██░░░░░░░░]
 ```
 
 - `ctx` is context window usage.
