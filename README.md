@@ -9,11 +9,16 @@ jeremy | Sonnet 5.5 | ctx:6% | 5h:[███░░░░░░░] 7d:[██░
 - `ctx` is context window usage.
 - `5h` / `7d` are rate-limit bars (Claude.ai subscription logins only).
 
-## Install
+## Install (customizable)
 
-Easiest: tell Claude Code to follow [INSTALL.md](INSTALL.md).
+Tell Claude Code:
 
-Manual:
+> Follow the instructions in https://github.com/JeremyEltho/statusline/blob/main/INSTALL.md
+
+Claude walks you through a setup: pick what to show (model, context %, rate limits, git branch, cost, time, ...), the layout, separators, bar style, and colors. Or just **mock up the line you want** and Claude builds it to match. It saves your choices to `~/.claude/statusline.spec.md`, so you can say "customize my status line" later to tweak it.
+
+## Install (default look, manual)
+
 
 1. `brew install jq`
 2. `cp statusline.sh ~/.claude/statusline.sh && chmod +x ~/.claude/statusline.sh`
