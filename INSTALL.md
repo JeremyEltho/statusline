@@ -74,6 +74,7 @@ When they do:
 2. Generate `~/.claude/statusline.sh` from the spec. Rules:
    - Read stdin once: `input=$(cat)`.
    - Every `jq` read uses `// empty`, and every item degrades gracefully when its value is missing (empty bar, or hide the item). A status line must never print errors or take noticeable time.
+   - Build each line by appending only non-empty parts, so a hidden item never leaves a stray or doubled separator (for example a leading ` · `): `add() { [ -n "$1" ] && out="${out:+$out · }$1"; }`, then `add "$cwd"; add "$model"; ...`.
    - Keep it fast. Avoid slow commands (network calls, large `git status` on huge repos); say so if the user asks for one.
    - Colors use ANSI escapes via `printf '\033[...m'` and always reset at the end.
    - One `printf` or `echo` per output line.
